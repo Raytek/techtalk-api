@@ -1,4 +1,4 @@
-package co.excentri.techtalkapi
+package co.excentri.techtalk.api
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

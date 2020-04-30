@@ -1,4 +1,4 @@
-package co.excentri.techtalkapi
+package co.excentri.techtalk.api.application
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
