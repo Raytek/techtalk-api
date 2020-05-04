@@ -14,6 +14,6 @@ class PersonController(private val personRepository: PersonRepository) {
 
     @GetMapping
     fun person(@RequestParam id: Long): ResponseEntity<Person> {
-        return ResponseEntity.of(personRepository.findPersonById(id))
+        return ResponseEntity.ok(personRepository.findPersonById(id))
     }
 }
