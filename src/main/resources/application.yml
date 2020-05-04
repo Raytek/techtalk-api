@@ -1,0 +1,6 @@
+spring:
+    application.name: techtalk-api
+    datasource:
+        username: techtalk
+        password: techtalk
+        url: jdbc:postgresql://localhost:5432/techtalk
