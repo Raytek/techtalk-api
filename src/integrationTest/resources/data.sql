@@ -1,4 +1,4 @@
-INSERT INTO person (fullName, nickname, role, createdAt, updatedAt, createdBy, updatedBy)
+INSERT INTO person (full_name, nickname, role, created_at, updated_at, created_by, updated_by)
 VALUES
 	(
 	    'Vinícius Savi Silva',

@@ -1,28 +1,29 @@
 package co.excentri.techtalk.api.domain
 
-import com.google.gson.Gson
-import org.springframework.data.annotation.Id
 import java.time.Instant
 import java.util.Date
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
+import javax.persistence.Id
 import javax.persistence.PrePersist
 import javax.persistence.PreUpdate
+import javax.persistence.Table
 
 
 @Entity
+@Table(schema = "public", name = "person")
 data class Person(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private val id: Long,
-        private val fullName: String? = null,
-        private val nickname: String? = null,
-        private val role: String? = null,
-        private var createdAt: Date,
-        private var updatedAt: Date,
-        private var createdBy: Long,
-        private var updatedBy: Long
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0,
+    val fullName: String? = null,
+    val nickname: String? = null,
+    val role: String? = null,
+    var createdAt: Date? = null,
+    var updatedAt: Date? = null,
+    var createdBy: Long? = null,
+    var updatedBy: Long? = null
 ) {
     // TODO: Change fixed id
 
@@ -41,6 +42,13 @@ data class Person(
     }
 
     override fun toString(): String {
-        return Gson().toJson(super.toString())
+        return "Person [id=$id, " +
+            "fullName=$fullName, " +
+            "nickname=$nickname, " +
+            "role=$role, " +
+            "createdAt=$createdAt, " +
+            "updatedAt=$updatedAt, " +
+            "createdBy=$createdBy, " +
+            "updatedBy=$updatedBy]"
     }
 }

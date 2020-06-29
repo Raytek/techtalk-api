@@ -1,19 +1,20 @@
 package co.excentri.techtalk.api.controllers
 
 import co.excentri.techtalk.api.domain.Person
-import co.excentri.techtalk.api.repository.PersonRepository
+import co.excentri.techtalk.api.service.PersonService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/person")
-class PersonController(private val personRepository: PersonRepository) {
+class PersonController(private val personService: PersonService) {
 
-    @GetMapping
-    fun person(@RequestParam id: Long): ResponseEntity<Person> {
-        return ResponseEntity.ok(personRepository.findPersonById(id))
+    @GetMapping("{id}")
+    fun person(@PathVariable id: Long): ResponseEntity<Person> {
+        val person = personService.findPersonById(id)
+        return ResponseEntity.ok(person)
     }
 }
