@@ -9,8 +9,6 @@ class Containers {
     companion object {
         val postgres: GenericContainer<Nothing> = FixedHostPortGenericContainer<Nothing>("postgres:10.5-alpine").also {
             it.withFixedExposedPort(5432, 5432)
-            it.withExposedPorts(5432)
-            it.withNetworkAliases("database")
             it.addEnv("POSTGRES_PASSWORD", "techtalk")
             it.withCopyFileToContainer(
                 MountableFile.forClasspathResource(
